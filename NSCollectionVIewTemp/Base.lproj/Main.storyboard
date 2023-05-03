@@ -683,27 +683,12 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
+                <windowController id="B8D-0N-5wS" customClass="MainWindowController" customModule="NSCollectionVIewTemp" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <toolbar key="toolbar" implicitIdentifier="D5CF3707-6434-4FBE-B4BB-2DF921C3591E" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="Dml-10-zLk">
-                            <allowedToolbarItems>
-                                <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="RXg-2J-tuR"/>
-                                <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="HaH-h9-b4S"/>
-                                <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="DzC-n2-GeS"/>
-                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="rQj-rK-aK9"/>
-                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="nah-b8-6E1"/>
-                            </allowedToolbarItems>
-                            <defaultToolbarItems>
-                                <toolbarItem reference="RXg-2J-tuR"/>
-                                <toolbarItem reference="HaH-h9-b4S"/>
-                                <toolbarItem reference="nah-b8-6E1"/>
-                                <toolbarItem reference="DzC-n2-GeS"/>
-                            </defaultToolbarItems>
-                        </toolbar>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
@@ -766,6 +751,33 @@
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="655"/>
+        </scene>
+        <!--Custom Titlebar Accessory View Controller-->
+        <scene sceneID="41Z-lp-4pr">
+            <objects>
+                <viewController storyboardIdentifier="CustomTitlebarAccessoryViewController" id="Liv-WO-vp7" customClass="CustomTitlebarAccessoryViewController" customModule="NSCollectionVIewTemp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="fcV-p4-BdP">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="28"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7LI-Hb-7le">
+                                <rect key="frame" x="91" y="7" width="269" height="14"/>
+                                <textFieldCell key="cell" controlSize="small" lineBreakMode="clipping" title="Custom View : NSTitlebarAccessoryViewController" id="SJH-Iz-Sr9">
+                                    <font key="font" metaFont="smallSystem"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="7LI-Hb-7le" firstAttribute="centerX" secondItem="fcV-p4-BdP" secondAttribute="centerX" id="jch-vz-W38"/>
+                            <constraint firstItem="7LI-Hb-7le" firstAttribute="centerY" secondItem="fcV-p4-BdP" secondAttribute="centerY" id="t19-UG-E3n"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="FvE-ZH-jET" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="583" y="98"/>
         </scene>
     </scenes>
 </document>

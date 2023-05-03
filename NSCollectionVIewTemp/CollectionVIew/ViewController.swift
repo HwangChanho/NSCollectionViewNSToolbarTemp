@@ -77,6 +77,8 @@ extension ViewController: NSCollectionViewDelegate, NSCollectionViewDataSource {
               let cell = collectionView.item(at: indexPath) as? TestCell else {
             return
         }
+        
+        cell.cLabel.stringValue = "tapped"
     }
     
     func collectionView(_ collectionView: NSCollectionView, didDeselectItemsAt indexPaths: Set<IndexPath>) {
