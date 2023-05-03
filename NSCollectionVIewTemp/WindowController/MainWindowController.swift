@@ -46,6 +46,7 @@ class MainWindowController: NSWindowController, NSToolbarItemValidation {
             newToolbar.delegate = self
             newToolbar.allowsUserCustomization = true
             newToolbar.autosavesConfiguration = true
+            // 모든 구성 사항을 자동으로 저장하고 identifier에서 불러올수 있다.
             newToolbar.displayMode = .default
             
             // Example on center-pinning a toolbar item
@@ -69,46 +70,40 @@ class MainWindowController: NSWindowController, NSToolbarItemValidation {
     }
     
     // MARK: - Toolbar Validation
-    
     func validateToolbarItem(_ item: NSToolbarItem) -> Bool {
         // print("Validating \(item.itemIdentifier)")
         
-        // Use this method to enable/disable toolbar items as user takes certain
-        // actions. For example, so items may not be applicable if a certain UI
-        // element is selected. This is called on your behalf. Return false if
-        // the toolbar item needs to be disabled.
-        
-        //  Maybe you want to not enable more actions if nothing in your app
-        //  is selected. Set your condition inside this `if`.
+        /**
+         이 방법을 사용하여 사용자가 특정 작업을 수행할 때 도구 모음 항목을 활성화/비활성화합니다.
+         actions 예를 들어 특정 UI 요소를 선택하면 항목이 적용되지 않을 수 있습니다.
+         이것은 귀하를 대신하여 호출됩니다.
+         도구 모음 항목을 비활성화해야 하는 경우 false를 반환합니다.
+         앱에서 아무것도 선택하지 않은 경우 추가 작업을 활성화하지 않으려는 경우가 있습니다.
+         */
         if  item.itemIdentifier == NSToolbarItem.Identifier.toolbarMoreActions {
             return true
         }
         
-        //  Maybe you want to not enable the share menu if nothing in your app
-        //  is selected. Set your condition inside this `if`.
+        // 앱에서 아무것도 선택하지 않은 경우 공유 메뉴를 활성화하지 않으려는 경우가 있습니다.
         if  item.itemIdentifier == NSToolbarItem.Identifier.toolbarShareButtonItem {
             return true
         }
         
-        //  Return false (to disable) this toolbar item if we never create a
-        //  titlebar accessory view. This is an example of a conditional
+        //  제목 표시줄 액세서리 보기를 만들지 않으면 이 도구 모음 항목을 false(비활성화)로 반환합니다. 조건문 예시입니다
         //  example.
         if  item.itemIdentifier == NSToolbarItem.Identifier.toolbarItemToggleTitlebarAccessory {
             return self.titlebarAccessoryViewController != nil
         }
         
-        //  Example of returning false to demonstrate a disabled toolbar item.
+        //  비활성화된 도구 모음 항목을 보여주기 위해 false를 반환하는 예입니다.
         if  item.itemIdentifier == NSToolbarItem.Identifier.toolbarItemMoreInfo {
             return false
         }
-        
-        //  Feel free to add more conditions for your other toolbar items here...
         
         return true
     }
     
     // MARK: - Toolbar Item Custom Actions
-    
     @IBAction func testAction(_ sender: Any) {
         if  let toolbarItem = sender as? NSToolbarItem {
             print("Clicked \(toolbarItem.itemIdentifier.rawValue)")

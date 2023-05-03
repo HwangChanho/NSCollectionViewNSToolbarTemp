@@ -78,7 +78,10 @@ extension ViewController: NSCollectionViewDelegate, NSCollectionViewDataSource {
             return
         }
         
-        cell.cLabel.stringValue = "tapped"
+        let transitionManager = ReplacePresentationAnimator()
+        let vc = SecondViewController()
+        
+        self.presentAsSheet(vc)
     }
     
     func collectionView(_ collectionView: NSCollectionView, didDeselectItemsAt indexPaths: Set<IndexPath>) {
