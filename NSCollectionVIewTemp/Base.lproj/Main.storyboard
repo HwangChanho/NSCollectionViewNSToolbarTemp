@@ -783,7 +783,7 @@
         <!--Second View Controller-->
         <scene sceneID="akh-BS-rz0">
             <objects>
-                <viewController id="cB3-jj-DEG" customClass="SecondViewController" customModule="NSCollectionVIewTemp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondViewController" id="cB3-jj-DEG" customClass="SecondViewController" customModule="NSCollectionVIewTemp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="8qc-Da-5Y3">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -797,12 +797,47 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nV3-5D-xnx">
+                                <rect key="frame" x="188" y="83" width="75" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Ut8-yF-lPD">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="o1l-JC-kQz" kind="show" id="CdC-NY-sh3"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                 </viewController>
                 <customObject id="X5H-2D-hnz" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="733" y="655"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="lwv-ro-Lfy">
+            <objects>
+                <viewController id="o1l-JC-kQz" sceneMemberID="viewController">
+                    <view key="view" id="aNS-aV-yh9">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a0H-em-xec">
+                                <rect key="frame" x="187" y="142" width="76" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Popup View" id="meC-oe-4n8">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                    </view>
+                </viewController>
+                <customObject id="Sfw-LI-HP2" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="733" y="1264"/>
         </scene>
     </scenes>
 </document>

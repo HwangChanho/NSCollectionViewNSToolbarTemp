@@ -78,10 +78,12 @@ extension ViewController: NSCollectionViewDelegate, NSCollectionViewDataSource {
             return
         }
         
-        let transitionManager = ReplacePresentationAnimator()
-        let vc = SecondViewController()
+        // 화면 이동
+        if let controller = self.storyboard?.instantiateController(withIdentifier: "SecondViewController") as? SecondViewController {
+            self.view.window?.contentViewController = controller
+        }
         
-        self.presentAsSheet(vc)
+        
     }
     
     func collectionView(_ collectionView: NSCollectionView, didDeselectItemsAt indexPaths: Set<IndexPath>) {
