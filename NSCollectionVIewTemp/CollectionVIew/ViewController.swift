@@ -7,25 +7,15 @@
 
 import Cocoa
 
-final class Cell: NSCollectionViewItem {
-    let label = NSTextField()
-    let myImageView = NSImageView()
-    
-    override func loadView() {
-        self.view = NSView()
-        self.view.wantsLayer = true
-    }
-}
-
 class ViewController: NSViewController {
     
     @IBOutlet weak var collectionView: NSCollectionView!
-    var scrollView = NSScrollView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        setCollectionView()
     }
     
     override var representedObject: Any? {
@@ -34,24 +24,35 @@ class ViewController: NSViewController {
         }
     }
     
+    private func listLayout() -> NSCollectionViewLayout {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+        
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(100))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        let section = NSCollectionLayoutSection(group: group)
+        let layout = NSCollectionViewCompositionalLayout(section: section)
+        
+        return layout
+    }
+    
     private func setCollectionView() {
         let layout = NSCollectionViewFlowLayout()
-        layout.minimumLineSpacing = 4
+        layout.minimumLineSpacing = 20
         
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.collectionViewLayout = layout
+        collectionView.collectionViewLayout = listLayout()
         collectionView.allowsMultipleSelection = false
         collectionView.backgroundColors = [.clear]
         collectionView.isSelectable = true
-        collectionView.register(
-            Cell.self,
-            forItemWithIdentifier: NSUserInterfaceItemIdentifier(rawValue: "Cell")
-        )
         
-        scrollView = NSScrollView(frame: NSRect(x: 0, y: 0, width: 200, height: 200))
-        scrollView.documentView = collectionView
-        view.addSubview(scrollView)
+        let nib = NSNib(nibNamed: "TestCell", bundle: nil)
+        collectionView.register(
+            nib,
+            forItemWithIdentifier: NSUserInterfaceItemIdentifier(rawValue: "TestCell")
+        )
     }
 }
 
@@ -62,25 +63,25 @@ extension ViewController: NSCollectionViewDelegate, NSCollectionViewDataSource {
     
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
         let cell = collectionView.makeItem(
-            withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "Cell"),
+            withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "TestCell"),
             for: indexPath
-        ) as! Cell
+        ) as! TestCell
         
-        cell.label.stringValue = "name"
+        cell.cLabel.stringValue = "StringValue"
         
         return cell
     }
     
     func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
         guard let indexPath = indexPaths.first,
-              let cell = collectionView.item(at: indexPath) as? Cell else {
+              let cell = collectionView.item(at: indexPath) as? TestCell else {
             return
         }
     }
     
     func collectionView(_ collectionView: NSCollectionView, didDeselectItemsAt indexPaths: Set<IndexPath>) {
         guard let indexPath = indexPaths.first,
-              let cell = collectionView.item(at: indexPath) as? Cell else {
+              let cell = collectionView.item(at: indexPath) as? TestCell else {
             return
         }
     }

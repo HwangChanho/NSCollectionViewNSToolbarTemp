@@ -14,6 +14,8 @@
 		FB731CBD2A00E74E00872EE5 /* NSCollectionVIewTempTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB731CBC2A00E74E00872EE5 /* NSCollectionVIewTempTests.swift */; };
 		FB731CC72A00E74E00872EE5 /* NSCollectionVIewTempUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB731CC62A00E74E00872EE5 /* NSCollectionVIewTempUITests.swift */; };
 		FB731CC92A00E74E00872EE5 /* NSCollectionVIewTempUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB731CC82A00E74E00872EE5 /* NSCollectionVIewTempUITestsLaunchTests.swift */; };
+		FB731CDC2A00F22300872EE5 /* TestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB731CDA2A00F22300872EE5 /* TestCell.swift */; };
+		FB731CDD2A00F22300872EE5 /* TestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB731CDB2A00F22300872EE5 /* TestCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		FB731CC22A00E74E00872EE5 /* NSCollectionVIewTempUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NSCollectionVIewTempUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB731CC62A00E74E00872EE5 /* NSCollectionVIewTempUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCollectionVIewTempUITests.swift; sourceTree = "<group>"; };
 		FB731CC82A00E74E00872EE5 /* NSCollectionVIewTempUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCollectionVIewTempUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FB731CDA2A00F22300872EE5 /* TestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCell.swift; sourceTree = "<group>"; };
+		FB731CDB2A00F22300872EE5 /* TestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +99,8 @@
 		FB731CA92A00E74D00872EE5 /* NSCollectionVIewTemp */ = {
 			isa = PBXGroup;
 			children = (
+				FB731CD92A00ED7A00872EE5 /* CollectionVIew */,
 				FB731CAA2A00E74D00872EE5 /* AppDelegate.swift */,
-				FB731CAC2A00E74D00872EE5 /* ViewController.swift */,
 				FB731CAE2A00E74E00872EE5 /* Assets.xcassets */,
 				FB731CB02A00E74E00872EE5 /* Main.storyboard */,
 				FB731CB32A00E74E00872EE5 /* NSCollectionVIewTemp.entitlements */,
@@ -119,6 +123,16 @@
 				FB731CC82A00E74E00872EE5 /* NSCollectionVIewTempUITestsLaunchTests.swift */,
 			);
 			path = NSCollectionVIewTempUITests;
+			sourceTree = "<group>";
+		};
+		FB731CD92A00ED7A00872EE5 /* CollectionVIew */ = {
+			isa = PBXGroup;
+			children = (
+				FB731CAC2A00E74D00872EE5 /* ViewController.swift */,
+				FB731CDA2A00F22300872EE5 /* TestCell.swift */,
+				FB731CDB2A00F22300872EE5 /* TestCell.xib */,
+			);
+			path = CollectionVIew;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,6 +241,7 @@
 			files = (
 				FB731CAF2A00E74E00872EE5 /* Assets.xcassets in Resources */,
 				FB731CB22A00E74E00872EE5 /* Main.storyboard in Resources */,
+				FB731CDD2A00F22300872EE5 /* TestCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB731CAD2A00E74D00872EE5 /* ViewController.swift in Sources */,
+				FB731CDC2A00F22300872EE5 /* TestCell.swift in Sources */,
 				FB731CAB2A00E74D00872EE5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
