@@ -265,7 +265,8 @@ extension MainWindowController: NSToolbarDelegate {
             NSToolbarItem.Identifier.toolbarShareButtonItem,
             NSToolbarItem.Identifier.toolbarSearchItem,
             NSToolbarItem.Identifier.space,
-            NSToolbarItem.Identifier.flexibleSpace]
+            NSToolbarItem.Identifier.flexibleSpace
+        ]
     }
     
     func toolbarWillAddItem(_ notification: Notification) {
